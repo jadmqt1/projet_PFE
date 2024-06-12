@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "oreders",
+  "info": {
+    "singularName": "oreder",
+    "pluralName": "oreders",
+    "displayName": "oreder",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nom": {
+      "type": "string"
+    },
+    "mobilenum": {
+      "type": "string"
+    },
+    "adress": {
+      "type": "string"
+    },
+    "ville": {
+      "type": "string"
+    },
+    "product": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::product.product"
+    },
+    "quantity": {
+      "type": "integer"
+    }
+  }
+}

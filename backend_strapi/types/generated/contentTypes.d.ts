@@ -823,6 +823,46 @@ export interface ApiCategorieCategorie extends Schema.CollectionType {
   };
 }
 
+export interface ApiOrederOreder extends Schema.CollectionType {
+  collectionName: 'oreders';
+  info: {
+    singularName: 'oreder';
+    pluralName: 'oreders';
+    displayName: 'oreder';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    nom: Attribute.String;
+    mobilenum: Attribute.String;
+    adress: Attribute.String;
+    ville: Attribute.String;
+    product: Attribute.Relation<
+      'api::oreder.oreder',
+      'oneToOne',
+      'api::product.product'
+    >;
+    quantity: Attribute.Integer;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::oreder.oreder',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::oreder.oreder',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiProductProduct extends Schema.CollectionType {
   collectionName: 'products';
   info: {
@@ -881,6 +921,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
       'api::categorie.categorie': ApiCategorieCategorie;
+      'api::oreder.oreder': ApiOrederOreder;
       'api::product.product': ApiProductProduct;
     }
   }
