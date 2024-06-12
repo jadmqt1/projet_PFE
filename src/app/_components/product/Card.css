@@ -19,13 +19,14 @@
 
   border-radius: 1rem;
 }
+
 .container1 {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
   padding: 20px;
-  background-color: #f4f4f4;
+  
 }
 
 .card1 {
@@ -130,7 +131,7 @@
   text-wrap: nowrap;
   text-overflow: ellipsis;
 }
-.container {
+.containerr {
   overflow: auto;
   display: flex;
   scroll-snap-type: x mandatory;
@@ -164,12 +165,10 @@ h1{
   color: black;
   display: flex;
 }
-.container h1{
+.containerr h1{
   display: flex;
   font-size: 60px;
   display: table-row-group;
-
-  
 }
 
 .size {
@@ -222,14 +221,14 @@ h1{
 }
 
 .price {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 700;
   color: red;
 }
 .price1
 {
   color: red;
-          font-size: 24px;
+  font-size: 24px;
 }
 .STOCK
 {
